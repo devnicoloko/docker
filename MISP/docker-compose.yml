@@ -1,0 +1,16 @@
+db :
+  image: mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: misp
+    MYSQL_USER: misp
+    MYSQL_PASSWORD: misp
+misp:
+  image: nicoloko/misp:master
+  environment:
+    MYSQL_ROOT_PASSWORD: misp
+    MYSQL_PORT_3306_TCP_ADDR: db
+    MYSQL_PORT_3306_TCP_PORT: 3306
+  ports: 
+    - "80:80"
+  links:
+    - db
