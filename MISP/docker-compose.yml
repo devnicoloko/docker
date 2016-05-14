@@ -10,7 +10,7 @@ misp:
     MYSQL_ROOT_PASSWORD: misp
     MYSQL_PORT_3306_TCP_ADDR: db
     MYSQL_PORT_3306_TCP_PORT: 3306
-  expose: 
+  ports: 
     - "8000:80"
   links:
     - db
