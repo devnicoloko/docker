@@ -17,4 +17,4 @@ services:
    image: nicoloko/tango
    hostname: sensor-1
    ports:
-    - "2222:2222"
+    - "22:2222"
