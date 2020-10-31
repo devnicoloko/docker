@@ -1,7 +1,7 @@
-sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" > docker.list
-sudo cp docker.list /etc/apt/sources.list.d/docker.list
-sudo apt-get update
-sudo apt-get install -q -y docker-engine
-sudo service docker start
-sudo usermod -aG docker admin
+sudo apt -y update
+sudo apt -y install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt update
+sudo apt install -y docker-ce
+sudo usermod -aG docker ubuntu
